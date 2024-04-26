@@ -7,7 +7,8 @@ public class Addr {
 	private String email;
 	private String addr;
 	private String group;
-
+	
+	//생성자
 	public Addr(String name, String phone, String email, String addr, String group) {
 		this.name = name;
 		this.phone = phone;
@@ -15,7 +16,8 @@ public class Addr {
 		this.addr = addr;
 		this.group = group;
 	}
-
+	
+	//getter(), setter()
 	public String getName() {
 		return name;
 	}

@@ -7,12 +7,14 @@ public class SmartPhone {
 	Addr[] addrList;
 	int count = 0;
 	Scanner sc;
-
+	
+	//생성자
 	public SmartPhone() {
 		addrList = new Addr[10];
 		sc = new Scanner(System.in);
 	}
-
+	
+	//입력 메소드 Addr객체 return
 	public Addr inputAddrData() {
 		System.out.print("이름:");
 		String name = sc.nextLine();
@@ -27,7 +29,8 @@ public class SmartPhone {
 
 		return new Addr(name, phone, email, addr, group);
 	}
-
+	
+	//추가 메소드
 	public void addAddr(Addr Addr) {
 		if (count == 10) {
 			System.out.println("데이터가 가득 찼습니다.삭제 후 다시 등록해 주세요.");
@@ -37,7 +40,8 @@ public class SmartPhone {
 			System.out.println(">>>>데이터가 저장되었습니다.(" + count + ")");
 		}
 	}
-
+	
+	//객체 출력 메소드
 	public void printAddr(Addr Addr) {
 		System.out.println("이름:" + Addr.getName());
 		System.out.println("전화번호:" + Addr.getPhone());
@@ -46,13 +50,15 @@ public class SmartPhone {
 		System.out.println("그룹(친구/가족):" + Addr.getGroup());
 		System.out.println("------------------------");
 	}
-
+	
+	//모든객체 출력 메소드
 	public void printAllAddr() {
 		for (int i = 0; i < count; i++) {
 			printAddr(addrList[i]);
 		}
 	}
-
+	
+	//name으로 찾는 메소드
 	public void searchAddr(String name) {
 		for (int i = 0; i < count; i++) {
 			if (addrList[i].getName().equals(name)) {
@@ -60,7 +66,8 @@ public class SmartPhone {
 			}
 		}
 	}
-
+	
+	//name으로 값 찾아서 삭제하는 메소드
 	public void deleteAddr(String name) {
 		for (int i = 0; i < count; i++) {
 			if (addrList[i].getName().equals(name)) {
@@ -74,7 +81,8 @@ public class SmartPhone {
 		}
 
 	}
-
+	
+	//name으로 값을 찾아 수정해 newAddr에 저장해 addrList에 할당
 	public void editAddr(String name, Addr newAddr) {
 		for (int i = 0; i < count; i++) {
 			if (addrList[i].getName().equals(name)) {

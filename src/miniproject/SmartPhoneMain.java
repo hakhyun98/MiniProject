@@ -7,12 +7,11 @@ public class SmartPhoneMain {
 	public static void main(String[] args){
 
 		Scanner sc = new Scanner(System.in);
-		SmartPhone smartphone = new SmartPhone();
+		SmartPhone smartphone = new SmartPhone(); //SmartPhone 객체
 
 		System.out.println("#데이터 2개를 입력합니다.");
 		for (int i = 0; i < 2; i++) {
-			Addr newAddr = smartphone.inputAddrData();
-			smartphone.addAddr(newAddr);
+			smartphone.addAddr(smartphone.inputAddrData());
 		}
 
 		while (true) {
@@ -21,8 +20,7 @@ public class SmartPhoneMain {
 
 			switch (num) {
 			case 1:
-				Addr newAddr = smartphone.inputAddrData();
-				smartphone.addAddr(newAddr);
+				smartphone.addAddr(smartphone.inputAddrData());
 				break;
 			case 2:
 				smartphone.printAllAddr();
@@ -40,12 +38,12 @@ public class SmartPhoneMain {
 			case 5:
 				System.out.print("수정할 이름을 입력하세요:");
 				String editName = sc.nextLine();
-				Addr newAddr1 = smartphone.inputAddrData();
-				smartphone.editAddr(editName, newAddr1);
+				smartphone.editAddr(editName, smartphone.inputAddrData());
 				break;
 			case 6:
 				System.out.println("프로그램을 종료합니다.");
 				System.exit(0);
+				sc.close();
 				break;
 			default :
 				System.out.println("올바른 메뉴를 선택해 주세요.");
@@ -53,7 +51,8 @@ public class SmartPhoneMain {
 		}
 
 	}
-
+	
+	//메뉴 메소드
 	public static void printMenu(){
 		System.out.println("주소관리 메뉴-----------");
 		System.out.println(">>1.연락처 등록");
