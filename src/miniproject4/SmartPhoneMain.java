@@ -10,10 +10,10 @@ public class SmartPhoneMain {
 		Scanner sc = new Scanner(System.in);
 		SmartPhone smartphone = new SmartPhone(); // SmartPhone 객체
 
-//		System.out.println("#데이터 2개를 입력합니다.");
-//		for (int i = 0; i < 2; i++) {
-//			smartphone.addAddr(smartphone.inputAddrData());
-//		}
+		System.out.println("#데이터 2개를 입력합니다.");
+		for (int i = 0; i < 2; i++) {
+			smartphone.addAddr(smartphone.inputAddrData());
+		}
 
 		while (true) {
 			printMenu();
@@ -40,7 +40,7 @@ public class SmartPhoneMain {
 			case 5:
 				System.out.print("수정할 이름을 입력하세요:");
 				String editName = sc.nextLine();
-				smartphone.editAddr(editName, smartphone.inputAddrData());
+				smartphone.editAddr(editName);
 				break;
 			case 6:
 				System.out.println("프로그램을 종료합니다.");
@@ -64,7 +64,6 @@ public class SmartPhoneMain {
 		System.out.println(">>5.연락처 수정");
 		System.out.println(">>6.프로그램 종료");
 		System.out.println("-------------------");
-
 	}
 
 }
