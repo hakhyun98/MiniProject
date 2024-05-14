@@ -39,7 +39,7 @@ public class SmartPhoneMain {
 			case 5:
 				System.out.print("수정할 이름을 입력하세요:");
 				String editName = sc.nextLine();
-				smartphone.editAddr(editName, smartphone.inputAddrData());
+				smartphone.editAddr(editName);
 				break;
 			case 6:
 				System.out.println("프로그램을 종료합니다.");
@@ -63,7 +63,6 @@ public class SmartPhoneMain {
 		System.out.println(">>5.연락처 수정");
 		System.out.println(">>6.프로그램 종료");
 		System.out.println("-------------------");
-
 	}
 
 }

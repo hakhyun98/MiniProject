@@ -51,8 +51,12 @@ public class SmartPhone {
 
 	// 모든객체 출력 메소드
 	public void printAllAddr() {
-		for (int i = 1; i <= addrList.size(); i++) {
-			printAddr(addrList.get(i));
+		if (addrList.isEmpty()) {
+			System.out.println("등록된 데이터가 없습니다.");
+		} else {
+			for (int i = 1; i <= addrList.size(); i++) {
+				printAddr(addrList.get(i));
+			}
 		}
 	}
 
@@ -61,6 +65,9 @@ public class SmartPhone {
 		for (int i = 1; i <= addrList.size(); i++) {
 			if (addrList.get(i).getName().equals(name)) {
 				printAddr(addrList.get(i));
+				break;
+			} else if (!addrList.get(i).getName().equals(name)) {
+				System.out.println("등록된 정보가 없습니다.");
 				break;
 			}
 		}
@@ -72,16 +79,23 @@ public class SmartPhone {
 			if (addrList.get(i).getName().equals(name)) {
 				addrList.remove(i);
 				break;
+			} else if (!addrList.get(i).getName().equals(name)) {
+				System.out.println("등록된 정보가 없습니다.");
+				break;
 			}
 		}
 	}
 
 	// name으로 값을 찾아 수정해 newAddr에 저장해 addrList에 할당
-	public void editAddr(String name, Addr newAddr) {
+	public void editAddr(String name) {
 		for (int i = 1; i <= addrList.size(); i++) {
 			if (addrList.get(i).getName().equals(name)) {
+				Addr newAddr = inputAddrData();
 				addrList.remove(i);
 				addrList.put(i, newAddr);
+				break;
+			} else if (!addrList.get(i).getName().equals(name)) {
+				System.out.println("등록된 정보가 없습니다.");
 				break;
 			}
 		}
