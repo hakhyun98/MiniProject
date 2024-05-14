@@ -91,7 +91,6 @@ public class SmartPhone {
 		for (int i = 1; i <= addrList.size(); i++) {
 			if (addrList.get(i).getName().equals(name)) {
 				Addr newAddr = inputAddrData();
-				addrList.remove(i);
 				addrList.put(i, newAddr);
 				break;
 			} else if (!addrList.get(i).getName().equals(name)) {
